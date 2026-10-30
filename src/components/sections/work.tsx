@@ -3,15 +3,16 @@ import { SectionLabel } from "@/components/section-label";
 import { projects } from "@/content/projects";
 import { pad } from "@/lib/format";
 
-// An editorial rhythm: one wide card, then alternating 7/5 and 5/7 pairs.
+// An editorial rhythm: one wide card, 7/5 and 5/7 pairs, then a staggered trio of portraits.
 const layout = [
   { span: "lg:col-span-12", aspect: "aspect-[4/3] md:aspect-[21/9]", sizes: "100vw" },
   { span: "lg:col-span-7", aspect: "aspect-[4/3]", sizes: "(min-width: 1024px) 58vw, 100vw" },
   { span: "lg:col-span-5 lg:mt-32", aspect: "aspect-[4/5]", sizes: "(min-width: 1024px) 42vw, 100vw" },
   { span: "lg:col-span-5", aspect: "aspect-[4/5]", sizes: "(min-width: 1024px) 42vw, 100vw" },
   { span: "lg:col-span-7 lg:mt-32", aspect: "aspect-[4/3]", sizes: "(min-width: 1024px) 58vw, 100vw" },
-  { span: "lg:col-span-7", aspect: "aspect-[4/3]", sizes: "(min-width: 1024px) 58vw, 100vw" },
-  { span: "lg:col-span-5 lg:mt-32", aspect: "aspect-[4/5]", sizes: "(min-width: 1024px) 42vw, 100vw" },
+  { span: "lg:col-span-4", aspect: "aspect-[4/5]", sizes: "(min-width: 1024px) 33vw, 100vw" },
+  { span: "lg:col-span-4 lg:mt-20", aspect: "aspect-[4/5]", sizes: "(min-width: 1024px) 33vw, 100vw" },
+  { span: "lg:col-span-4 lg:mt-40", aspect: "aspect-[4/5]", sizes: "(min-width: 1024px) 33vw, 100vw" },
 ];
 
 export function Work() {
@@ -30,7 +31,7 @@ export function Work() {
           <em>Selected</em> work
         </h2>
         <p className="max-w-sm text-lg leading-relaxed text-ink-soft lg:col-span-4">
-          Halls, venues, homes and gardens across Kerala — each one an idea made tangible.
+          Halls, venues, homes, gardens and heritage walks across Kerala — each one an idea made tangible.
         </p>
       </div>
 

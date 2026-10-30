@@ -47,7 +47,7 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-16 max-w-[90rem] items-center justify-between px-5 md:h-20 md:px-10">
         <Link href="/" onClick={close} className="font-display text-[1.45rem] leading-none tracking-[-0.035em]">
-          Jaslam <span className="font-extralight">T.H</span>
+          <span className="font-extralight">Ar.</span> Jaslam
         </Link>
 
         <nav aria-label="Primary" className="hidden md:block">
@@ -102,6 +102,16 @@ export function SiteHeader() {
           <p>
             <a href={`mailto:${profile.email}`} className="text-ink underline underline-offset-4">
               {profile.email}
+            </a>
+          </p>
+          <p>
+            <a
+              href={profile.instagram.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink underline underline-offset-4"
+            >
+              Instagram {profile.instagram.handle}
             </a>
           </p>
         </div>

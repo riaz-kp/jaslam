@@ -27,7 +27,7 @@ export function About() {
   return (
     <section id="about" aria-labelledby="about-title" className="mx-auto max-w-[90rem] px-5 py-24 md:px-10 md:py-36">
       <div className="mb-12 border-b border-ink/15 pb-4 md:mb-16">
-        <SectionLabel index={5}>About</SectionLabel>
+        <SectionLabel index={6}>About</SectionLabel>
       </div>
 
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
@@ -78,7 +78,7 @@ export function About() {
 
           <div className="mt-16 grid gap-14 md:grid-cols-2 md:gap-10">
             <Timeline title="Recognition" entries={profile.recognition} />
-            <Timeline title="Experience & workshops" entries={profile.experience} />
+            <Timeline title="Early experience & workshops" entries={profile.experience} />
           </div>
 
           <div className="mt-16 grid gap-14 md:grid-cols-2 md:gap-10">

@@ -49,31 +49,56 @@ async function Project({ params }: Pick<PageProps<"/projects/[slug]">, "params">
   const next = getNextProject(slug);
   const [lead, ...rest] = project.overview;
 
+  const coverStyle = project.coverPosition ? { objectPosition: project.coverPosition } : undefined;
+  const title = (
+    <>
+      <p className="eyebrow text-white/75">
+        Project {pad(index + 1)} / {pad(projects.length)} — {project.category}
+      </p>
+      <h1 className="condensed mt-5 max-w-5xl font-display text-[clamp(3.25rem,9vw,8.5rem)] leading-[0.86] tracking-[-0.045em] text-balance">
+        {project.title}
+      </h1>
+      {project.location && <p className="mt-5 text-lg text-white/80">{project.location}</p>}
+    </>
+  );
+
   return (
     <article>
-      <header data-hero className="relative isolate flex h-[88svh] min-h-[32rem] items-end overflow-hidden bg-night text-white">
-        <Image
-          src={project.cover.src}
-          alt={project.cover.alt}
-          fill
-          sizes="100vw"
-          placeholder="blur"
-          preload
-          className="hero-settle -z-20 object-cover"
-          style={project.coverPosition ? { objectPosition: project.coverPosition } : undefined}
-        />
-        <div className="absolute inset-x-0 top-0 -z-10 h-48 bg-gradient-to-b from-black/55 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-        <div className="mx-auto w-full max-w-[90rem] px-5 pb-10 md:px-10 md:pb-14">
-          <p className="eyebrow text-white/75">
-            Project {pad(index + 1)} / {pad(projects.length)} — {project.category}
-          </p>
-          <h1 className="condensed mt-5 max-w-5xl font-display text-[clamp(3.25rem,9vw,8.5rem)] leading-[0.86] tracking-[-0.045em] text-balance">
-            {project.title}
-          </h1>
-          {project.location && <p className="mt-5 text-lg text-white/80">{project.location}</p>}
-        </div>
-      </header>
+      {project.heroLayout === "split" ? (
+        <header data-hero className="bg-night text-white">
+          <div className="mx-auto grid min-h-[88svh] max-w-[90rem] gap-10 px-5 pt-24 pb-12 md:px-10 md:pt-28 md:pb-14 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-7">{title}</div>
+            <div className="relative -order-1 mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-t-full bg-white/5 lg:order-none lg:col-span-5 lg:mr-0 lg:ml-auto lg:aspect-[3/4] lg:h-[min(70svh,44rem)] lg:w-auto lg:max-w-none">
+              <Image
+                src={project.cover.src}
+                alt={project.cover.alt}
+                fill
+                sizes="(min-width: 1024px) 32rem, 90vw"
+                placeholder="blur"
+                preload
+                className="hero-settle object-cover"
+                style={coverStyle}
+              />
+            </div>
+          </div>
+        </header>
+      ) : (
+        <header data-hero className="relative isolate flex h-[88svh] min-h-[32rem] items-end overflow-hidden bg-night text-white">
+          <Image
+            src={project.cover.src}
+            alt={project.cover.alt}
+            fill
+            sizes="100vw"
+            placeholder="blur"
+            preload
+            className="hero-settle -z-20 object-cover"
+            style={coverStyle}
+          />
+          <div className="absolute inset-x-0 top-0 -z-10 h-48 bg-gradient-to-b from-black/55 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+          <div className="mx-auto w-full max-w-[90rem] px-5 pb-10 md:px-10 md:pb-14">{title}</div>
+        </header>
+      )}
 
       <section aria-label="Overview" className="mx-auto max-w-[90rem] px-5 py-20 md:px-10 md:py-28">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-10">
@@ -154,9 +179,9 @@ async function Project({ params }: Pick<PageProps<"/projects/[slug]">, "params">
         >
           <div className="mb-10 flex items-end justify-between border-b border-ink/15 pb-5">
             <h2 id="drawings-title" className="condensed font-display text-[clamp(2.75rem,6vw,5.25rem)] leading-[0.9] tracking-[-0.04em]">
-              Drawings
+              {project.drawingsTitle ?? "Drawings"}
             </h2>
-            <p className="eyebrow pb-1 text-ink-soft">Open a sheet to zoom</p>
+            <p className="eyebrow pb-1 text-ink-soft">{project.drawingsHint ?? "Open a sheet to zoom"}</p>
           </div>
           <Gallery shots={project.drawings} variant="drawings" />
         </section>

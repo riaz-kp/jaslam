@@ -8,6 +8,7 @@ export const nav = [
   { label: "Philosophy", href: "/#philosophy" },
   { label: "Work", href: "/#work" },
   { label: "Plans", href: "/#plans" },
+  { label: "Journey", href: "/#journey" },
   { label: "About", href: "/#about" },
   { label: "Contact", href: "/#contact" },
 ];

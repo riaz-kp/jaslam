@@ -7,7 +7,7 @@ export function SiteFooter() {
     <footer id="contact" className="bg-night text-paper">
       <div className="mx-auto max-w-[90rem] px-5 pt-24 pb-10 md:px-10 md:pt-36">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/15 pb-4 text-night-soft">
-          <SectionLabel index={6}>Contact</SectionLabel>
+          <SectionLabel index={7}>Contact</SectionLabel>
           <p className="eyebrow">{profile.coordinates}</p>
         </div>
         <div className="mt-12 grid gap-14 lg:grid-cols-12">
@@ -30,7 +30,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <dl className="mt-20 grid gap-8 border-t border-white/15 pt-8 sm:grid-cols-3">
+        <dl className="mt-20 grid gap-8 border-t border-white/15 pt-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <dt className="eyebrow text-night-soft">Email</dt>
             <dd className="mt-2 text-lg break-all">
@@ -44,6 +44,20 @@ export function SiteFooter() {
             <dd className="mt-2 text-lg">
               <a href={profile.phoneHref} className="hover:text-terracotta">
                 {profile.phone}
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt className="eyebrow text-night-soft">Instagram</dt>
+            <dd className="mt-2 text-lg">
+              <a
+                href={profile.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 break-all hover:text-terracotta"
+              >
+                {profile.instagram.handle}
+                <ArrowUpRight className="size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </dd>
           </div>

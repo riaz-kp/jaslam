@@ -2,6 +2,7 @@ import { Marquee } from "@/components/marquee";
 import { About } from "@/components/sections/about";
 import { Approach } from "@/components/sections/approach";
 import { Hero } from "@/components/sections/hero";
+import { Journey } from "@/components/sections/journey";
 import { Philosophy } from "@/components/sections/philosophy";
 import { Plans } from "@/components/sections/plans";
 import { Statement } from "@/components/sections/statement";
@@ -17,6 +18,7 @@ const personJsonLd = {
   description: profile.tagline,
   email: `mailto:${profile.email}`,
   url: siteUrl,
+  sameAs: [profile.instagram.url],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Calicut",
@@ -43,6 +45,7 @@ export default function Home() {
       <Work />
       <Statement />
       <Plans />
+      <Journey />
       <About />
     </>
   );

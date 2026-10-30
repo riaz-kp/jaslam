@@ -78,6 +78,13 @@ import residence04 from "@/assets/projects/residence/view-04.jpg";
 
 import unaisPlan from "@/assets/projects/unais/floor-plan.jpg";
 
+import ranthalTower from "@/assets/projects/ranthal/juma-masjid-tower.jpg";
+import ranthalRoof from "@/assets/projects/ranthal/timber-roof.jpg";
+import ranthalManuscripts from "@/assets/projects/ranthal/manuscripts.jpg";
+import ranthalStudio from "@/assets/projects/ranthal/studio-entrance.jpg";
+import ranthalPosterMishkal from "@/assets/projects/ranthal/poster-mishkal-mosque.jpg";
+import ranthalPosterJuma from "@/assets/projects/ranthal/poster-juma-masjid.jpg";
+
 import planVythiri from "@/assets/plans/vythiri.jpg";
 import planMoorkkanad from "@/assets/plans/moorkkanad.jpg";
 import planVallappuzha from "@/assets/plans/vallappuzha.jpg";
@@ -106,8 +113,13 @@ export type Project = {
   cover: Shot;
   /** CSS object-position for cropped covers, e.g. "50% 30%". */
   coverPosition?: string;
+  /** "split" frames a portrait cover beside the title instead of running it full-bleed. */
+  heroLayout?: "split";
   gallery: Shot[];
   drawings: Shot[];
+  /** Heading and hint for the `drawings` block; defaults to “Drawings”. */
+  drawingsTitle?: string;
+  drawingsHint?: string;
 };
 
 const theeram = {
@@ -161,6 +173,13 @@ const dhanesh = {
   house: {
     src: dhaneshRender,
     alt: "Two-storey concrete house with full-height glazing and cascading planters over a long pool, in a tropical forest",
+  },
+};
+
+const ranthal = {
+  tower: {
+    src: ranthalTower,
+    alt: "The blue-louvred timber upper storey of Kuttichira Juma Masjid against a cloud-streaked sky",
   },
 };
 
@@ -570,6 +589,51 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    slug: "ranthal-heritage-walk",
+    title: "Ranthal Heritage Walk",
+    category: "Heritage · Community",
+    location: "Kuttichira, Calicut, Kerala",
+    summary:
+      "People, places, stories — a walk through the timber mosques of Kuttichira with Ranthal Architects & Design Community.",
+    overview: [
+      "People, places, stories — a heritage walk through Kuttichira, the old quarter of Calicut, presented by Ranthal Architects & Design Community. Walks, talks and experiences invite participants to see familiar streets from a new perspective.",
+      "The walk gathers around the timber mosques of the quarter — the Mishkal Mosque (“faith in wood, history in every detail”) and the Kuttichira Juma Masjid — reading their tiered tiled roofs, carved eaves, blue-painted louvres and timber roof frames, and the manuscripts and craft that carry their history.",
+    ],
+    facts: [
+      { label: "Location", value: "Kuttichira, Calicut, Kerala" },
+      { label: "Format", value: "Walks, talks & experiences" },
+      { label: "Sites", value: "Mishkal Mosque, Kuttichira Juma Masjid" },
+      { label: "Themes", value: "Architecture, heritage, culture, community" },
+      { label: "With", value: "Ranthal Architects & Design Community" },
+    ],
+    cover: ranthal.tower,
+    coverPosition: "50% 55%",
+    heroLayout: "split",
+    gallery: [
+      ranthal.tower,
+      { src: ranthalRoof, alt: "Under the timber roof: rows of rafters and trusses above a broad wooden floor" },
+      { src: ranthalManuscripts, alt: "Aged Arabic manuscript pages laid out on a wooden floor" },
+      {
+        src: ranthalStudio,
+        alt: "Entrance to the Ranthal studio — a carved wooden sign beside a timber door and potted plants",
+      },
+    ],
+    drawings: [
+      {
+        src: ranthalPosterMishkal,
+        alt: "Walk poster for Mishkal Mosque, Kuttichira — “Faith in wood, history in every detail” — with its tiered tiled roofs under a summer sky",
+        caption: "Mishkal Mosque",
+      },
+      {
+        src: ranthalPosterJuma,
+        alt: "Walk poster for Kuttichira Juma Masjid — its blue louvred timber storey and carved eaves seen from below",
+        caption: "Kuttichira Juma Masjid",
+      },
+    ],
+    drawingsTitle: "Posters",
+    drawingsHint: "People · Places · Stories",
+  },
 ];
 
 export const plans: Shot[] = [
@@ -629,6 +693,13 @@ export const heroSlides: HeroSlide[] = [
     place: "Riverside concept",
     href: "/projects/dhanesh-farm-house",
     position: "40% 50%",
+  },
+  {
+    ...ranthal.tower,
+    title: "Ranthal Heritage Walk",
+    place: "Kuttichira",
+    href: "/projects/ranthal-heritage-walk",
+    position: "50% 45%",
   },
 ];
 
