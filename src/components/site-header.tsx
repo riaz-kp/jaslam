@@ -46,8 +46,8 @@ export function SiteHeader() {
       data-menu-open={menuOpen}
     >
       <div className="mx-auto flex h-16 max-w-[90rem] items-center justify-between px-5 md:h-20 md:px-10">
-        <Link href="/" onClick={close} className="font-serif text-[1.65rem] leading-none tracking-tight">
-          Jaslam <span className="italic">T.H</span>
+        <Link href="/" onClick={close} className="font-display text-[1.45rem] leading-none tracking-[-0.035em]">
+          Jaslam <span className="font-extralight">T.H</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden md:block">
@@ -88,7 +88,7 @@ export function SiteHeader() {
                 <Link
                   href={item.href}
                   onClick={close}
-                  className="flex items-baseline justify-between py-5 font-serif text-5xl"
+                  className="flex items-baseline justify-between py-4 font-display text-5xl tracking-[-0.04em]"
                 >
                   {item.label}
                   <span className="eyebrow text-ink-soft">0{i + 1}</span>

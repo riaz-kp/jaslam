@@ -28,11 +28,21 @@ export function ProjectCard({
           className="object-cover transition-transform duration-[1400ms] ease-soft group-hover:scale-[1.04]"
           style={project.coverPosition ? { objectPosition: project.coverPosition } : undefined}
         />
+        <span
+          aria-hidden="true"
+          className="absolute top-1/2 left-1/2 grid size-28 -translate-x-1/2 -translate-y-1/2 scale-75 place-items-center rounded-full bg-paper/90 text-center text-[0.8rem] leading-tight text-ink opacity-0 transition-[opacity,transform] duration-500 ease-soft group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100"
+        >
+          View
+          <br />
+          project
+        </span>
       </div>
       <div className="mt-4 flex items-start justify-between gap-6 border-t border-ink/15 pt-4">
         <div className="flex items-baseline gap-4">
           <span className="eyebrow text-ink-soft">{pad(index + 1)}</span>
-          <h3 className="font-serif text-[1.75rem] leading-[1.05] md:text-[2.1rem]">{project.title}</h3>
+          <h3 className="font-display text-[1.8rem] leading-[1.02] tracking-[-0.03em] md:text-[2.25rem]">
+            {project.title}
+          </h3>
         </div>
         <ArrowUpRight className="mt-1 size-6 shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
       </div>

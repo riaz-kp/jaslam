@@ -1,10 +1,12 @@
-import { HeroSlideshow } from "@/components/hero-slideshow";
+import { Marquee } from "@/components/marquee";
 import { About } from "@/components/sections/about";
-import { Intro } from "@/components/sections/intro";
+import { Approach } from "@/components/sections/approach";
+import { Hero } from "@/components/sections/hero";
+import { Philosophy } from "@/components/sections/philosophy";
 import { Plans } from "@/components/sections/plans";
+import { Statement } from "@/components/sections/statement";
 import { Work } from "@/components/sections/work";
 import { profile } from "@/content/profile";
-import { heroSlides } from "@/content/projects";
 import { siteUrl } from "@/content/site";
 
 const personJsonLd = {
@@ -12,6 +14,7 @@ const personJsonLd = {
   "@type": "Person",
   name: profile.name,
   jobTitle: profile.role,
+  description: profile.tagline,
   email: `mailto:${profile.email}`,
   url: siteUrl,
   address: {
@@ -33,15 +36,12 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c") }}
       />
-      <HeroSlideshow slides={heroSlides} eyebrow={`${profile.role} — ${profile.location}`}>
-        <h1 className="mt-5 font-serif text-[clamp(3.6rem,min(12vw,16svh),10rem)] leading-[0.86] tracking-[-0.025em]">
-          Mohammed
-          <br />
-          Jaslam <em>T.H</em>
-        </h1>
-      </HeroSlideshow>
-      <Intro />
+      <Hero />
+      <Philosophy />
+      <Approach />
+      <Marquee />
       <Work />
+      <Statement />
       <Plans />
       <About />
     </>

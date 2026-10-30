@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #f3efe7;
-  --color-paper-deep: #e9e2d5;
-  --color-ink: #1b1a17;
-  --color-ink-soft: #5e5950;
+  --color-paper: #efede8;
+  --color-paper-deep: #e4e0d7;
+  --color-ink: #121311;
+  --color-ink-soft: #5b5d56;
   --color-terracotta: #b5542c;
   --color-terracotta-deep: #9a4322;
-  --color-night: #141612;
+  --color-moss: #263020;
+  --color-moss-soft: #aab59b;
+  --color-night: #121411;
   --color-night-soft: #a9a497;
-  --color-moss: #2b3326;
 
   --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -17,7 +18,18 @@
 @theme inline {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Bricolage's width axis: a condensed cut for the largest headlines. */
+@utility condensed {
+  font-variation-settings: "wdth" 78;
+}
+
+/* Hollow letters for the marquee. */
+@utility text-outline {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.25px currentColor;
 }
 
 @layer base {
@@ -53,6 +65,18 @@
 }
 
 @layer components {
+  .font-display {
+    font-optical-sizing: auto;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  /* Emphasis in headlines is a weight shift, not an italic (Bricolage has none). */
+  .font-display em {
+    font-style: normal;
+    font-weight: 250;
+  }
+
   .eyebrow {
     font-family: var(--font-mono);
     font-size: 0.7rem;
@@ -61,7 +85,7 @@
     text-transform: uppercase;
   }
 
-  /* Transparent over a hero image, solid paper once scrolled past it (or on pages with no hero). */
+  /* Transparent over a dark hero image, solid paper elsewhere. */
   .site-header {
     color: #fff;
   }
@@ -69,7 +93,7 @@
   body:not(:has([data-hero])) .site-header {
     color: var(--color-ink);
     background-color: color-mix(in oklab, var(--color-paper) 96%, transparent);
-    box-shadow: 0 1px 0 rgb(27 26 23 / 0.1);
+    box-shadow: 0 1px 0 rgb(18 19 17 / 0.1);
   }
 
   .skip-link {
@@ -116,6 +140,12 @@
   }
 }
 
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .hero-settle {
     animation: settle 9s var(--ease-soft) both;
@@ -123,6 +153,10 @@
 
   .hero-progress {
     animation: fill var(--slide-duration) linear both;
+  }
+
+  .marquee {
+    animation: marquee 48s linear infinite;
   }
 
   @supports (animation-timeline: view()) {

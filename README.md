@@ -1,10 +1,12 @@
 # Mohammed Jaslam T.H — Portfolio
 
-Portfolio site for Mohammed Jaslam T.H, architect and landscape designer in Calicut, Kerala.
-Built with Next.js 16 (App Router, Cache Components), React 19 and Tailwind CSS v4.
+*Between Nature & Architecture* — portfolio site for Mohammed Jaslam T.H, architect and
+landscape designer in Calicut, Kerala. Built with Next.js 16 (App Router, Cache Components),
+React 19 and Tailwind CSS v4. Headlines are set in Bricolage Grotesque (its width axis gives
+the condensed display cut), body text in Geist.
 
-The content comes from the shared Google Drive “Portfolio” folder: the CV sheet, eight
-project folders and the landscape master plans.
+The content comes from the shared Google Drive “Portfolio” folder: the CV sheet, the profile
+photo, eight project folders and the landscape master plans. The philosophy text is Jaslam's own.
 
 ## Run it
 
@@ -15,12 +17,15 @@ npm run dev
 
 Open http://localhost:3000. `npm run build && npm start` serves the production build.
 
+If an edit to `src/app/globals.css` doesn't show up in the dev server, stop it, delete `.next`
+and run `npm run dev` again — the Tailwind Turbopack loader can hold on to a cached stylesheet.
+
 ## Where things live
 
 | What | File |
 | --- | --- |
-| Name, bio, contact, CV details, skills | `src/content/profile.ts` |
-| Projects, master plans, hero slides | `src/content/projects.ts` |
+| Tagline, philosophy text, contact, CV details, skills | `src/content/profile.ts` |
+| Projects, master plans, hero slides, “How…” explorations | `src/content/projects.ts` |
 | Images (optimised from Drive, max 2400 px) | `src/assets/` |
 | Home page sections | `src/components/sections/` |
 | Project case-study page | `src/app/projects/[slug]/page.tsx` |

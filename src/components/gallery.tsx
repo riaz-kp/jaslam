@@ -57,7 +57,7 @@ export function Gallery({ shots, variant }: { shots: Shot[]; variant: Variant })
               </span>
               {(shot.caption || shot.note) && (
                 <span className="mt-3 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 border-t border-current/15 pt-3">
-                  <span className="font-serif text-xl leading-tight md:text-2xl">{shot.caption}</span>
+                  <span className="font-display text-xl leading-tight md:text-2xl">{shot.caption}</span>
                   {shot.note && <span className="eyebrow opacity-70">{shot.note}</span>}
                 </span>
               )}
@@ -201,7 +201,7 @@ function Lightbox({
 
           <div className="flex items-center justify-between gap-4 px-4 py-4 md:px-6">
             <p className="max-w-3xl text-sm text-night-soft">
-              {shot.caption && <span className="mr-2 font-serif text-lg text-paper">{shot.caption}</span>}
+              {shot.caption && <span className="mr-2 font-display text-lg text-paper">{shot.caption}</span>}
               {shot.alt}
             </p>
             {many && (

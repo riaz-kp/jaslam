@@ -1,4 +1,4 @@
-import portrait from "@/assets/profile/portrait.jpg";
+import portrait from "@/assets/profile/jaslam.jpg";
 
 // Levels are read off the triangle bars on Jaslam's CV (0–1).
 export type Skill = { name: string; level: number };
@@ -7,17 +7,34 @@ export type Entry = { year?: string; title: string; detail?: string };
 export const profile = {
   name: "Mohammed Jaslam T.H",
   role: "Architect & Landscape Designer",
+  tagline: "Between Nature & Architecture",
+  persona: "The Design Thinker",
+  traits: ["Conceptual", "Philosophical", "Experimental"],
+  ideology: "Driven by a distinctive design ideology.",
   location: "Calicut, Kerala",
+  coordinates: "11°15′N 75°46′E",
   email: "mr.jaslam14@gmail.com",
   phone: "+91 81118 24508",
   phoneHref: "tel:+918111824508",
   portrait,
-  statement:
-    "I design landscapes and buildings that begin with the site — its slope, its sun, its monsoon — and end as places you can already picture yourself in.",
-  bio: [
-    "I'm Jaslam, an architect and landscape designer from Calicut, Kerala, trained at the Amity School of Architecture and Planning, Lucknow.",
-    "My work moves between scales: master plans for event venues and farm villages, gardens wrapped around family homes, and the homes themselves. Every project starts by reading the land — where the sun is harshest, which way the slope falls, where the monsoon water wants to go — and ends in drawings and renders detailed enough to walk through.",
-  ],
+  // Jaslam's own words, as supplied.
+  philosophy: {
+    // “…between space, nature, and perception.” — the keywords get inline images.
+    lead: "I am an architect and landscape designer fascinated by the relationship between",
+    keywords: ["space", "nature", "perception"] as const,
+    approach:
+      "My design approach is guided by curiosity—an exploration of how form emerges, how materials communicate, how landscapes influence architecture, and how spaces evoke emotion.",
+    inspiration:
+      "I draw inspiration from natural systems, regional contexts, and contemporary design thinking to develop ideas that are distinctive, contextual, and experiential.",
+    practice:
+      "Across architecture, landscape design, and visualization, I see every project as an opportunity to translate abstract ideas into tangible experiences.",
+    closing:
+      "Ultimately, I am interested in design that goes beyond appearance—design that creates atmosphere, establishes a sense of belonging, and leaves a lasting impression.",
+  },
+  sources: ["Natural systems", "Regional contexts", "Contemporary design thinking"],
+  qualities: ["Distinctive", "Contextual", "Experiential"],
+  intro:
+    "I'm Jaslam — from Calicut, Kerala, trained at the Amity School of Architecture and Planning, Lucknow.",
   education: {
     school: "Amity School of Architecture and Planning",
     place: "Lucknow",

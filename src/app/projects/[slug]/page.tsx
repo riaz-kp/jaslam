@@ -68,7 +68,7 @@ async function Project({ params }: Pick<PageProps<"/projects/[slug]">, "params">
           <p className="eyebrow text-white/75">
             Project {pad(index + 1)} / {pad(projects.length)} — {project.category}
           </p>
-          <h1 className="mt-5 max-w-5xl font-serif text-[clamp(3.25rem,9vw,8.5rem)] leading-[0.9] tracking-[-0.02em] text-balance">
+          <h1 className="condensed mt-5 max-w-5xl font-display text-[clamp(3.25rem,9vw,8.5rem)] leading-[0.86] tracking-[-0.045em] text-balance">
             {project.title}
           </h1>
           {project.location && <p className="mt-5 text-lg text-white/80">{project.location}</p>}
@@ -87,7 +87,7 @@ async function Project({ params }: Pick<PageProps<"/projects/[slug]">, "params">
           </dl>
 
           <div className="lg:col-span-7 lg:col-start-6">
-            <p className="font-serif text-[clamp(1.75rem,3vw,2.6rem)] leading-[1.15] text-balance">{lead}</p>
+            <p className="font-display text-[clamp(1.75rem,3vw,2.6rem)] font-normal leading-[1.12] tracking-[-0.025em] text-balance">{lead}</p>
             {rest.map((paragraph) => (
               <p key={paragraph} className="mt-6 text-lg leading-relaxed text-ink-soft">
                 {paragraph}
@@ -117,7 +117,7 @@ async function Project({ params }: Pick<PageProps<"/projects/[slug]">, "params">
         <section aria-labelledby="journey-title" className="bg-paper-deep">
           <div className="mx-auto max-w-[90rem] px-5 py-20 md:px-10 md:py-28">
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <h2 id="journey-title" className="font-serif text-[clamp(2.5rem,5.5vw,4.75rem)] leading-[0.95]">
+              <h2 id="journey-title" className="condensed font-display text-[clamp(2.75rem,6vw,5.25rem)] leading-[0.9] tracking-[-0.04em]">
                 {project.journey.title}
               </h2>
               <p className="max-w-sm text-ink-soft">{project.journey.intro}</p>
@@ -126,7 +126,7 @@ async function Project({ params }: Pick<PageProps<"/projects/[slug]">, "params">
               {project.journey.steps.map((step, i) => (
                 <li key={step.title} className="bg-paper-deep py-7 sm:pr-6 lg:px-6 lg:[&:nth-child(4n+1)]:pl-0">
                   <span className="eyebrow text-terracotta-deep">{pad(i + 1)}</span>
-                  <h3 className="mt-5 font-serif text-2xl">{step.title}</h3>
+                  <h3 className="mt-5 font-display text-2xl">{step.title}</h3>
                   <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">{step.text}</p>
                 </li>
               ))}
@@ -138,7 +138,7 @@ async function Project({ params }: Pick<PageProps<"/projects/[slug]">, "params">
       {project.gallery.length > 0 && (
         <section aria-labelledby="views-title" className="mx-auto max-w-[90rem] px-5 py-20 md:px-10 md:py-28">
           <div className="mb-10 flex items-end justify-between border-b border-ink/15 pb-5">
-            <h2 id="views-title" className="font-serif text-[clamp(2.5rem,5.5vw,4.75rem)] leading-[0.95]">
+            <h2 id="views-title" className="condensed font-display text-[clamp(2.75rem,6vw,5.25rem)] leading-[0.9] tracking-[-0.04em]">
               Views
             </h2>
             <p className="eyebrow pb-1 text-ink-soft">{pad(project.gallery.length)} images</p>
@@ -153,7 +153,7 @@ async function Project({ params }: Pick<PageProps<"/projects/[slug]">, "params">
           className={`mx-auto max-w-[90rem] px-5 pb-20 md:px-10 md:pb-28 ${project.gallery.length ? "" : "pt-4"}`}
         >
           <div className="mb-10 flex items-end justify-between border-b border-ink/15 pb-5">
-            <h2 id="drawings-title" className="font-serif text-[clamp(2.5rem,5.5vw,4.75rem)] leading-[0.95]">
+            <h2 id="drawings-title" className="condensed font-display text-[clamp(2.75rem,6vw,5.25rem)] leading-[0.9] tracking-[-0.04em]">
               Drawings
             </h2>
             <p className="eyebrow pb-1 text-ink-soft">Open a sheet to zoom</p>
@@ -178,7 +178,7 @@ async function Project({ params }: Pick<PageProps<"/projects/[slug]">, "params">
         />
         <div className="mx-auto flex min-h-[60svh] max-w-[90rem] flex-col justify-end px-5 py-14 md:px-10">
           <p className="eyebrow text-white/75">Next project</p>
-          <p className="mt-4 flex items-center gap-4 font-serif text-[clamp(2.75rem,7vw,6.5rem)] leading-[0.95]">
+          <p className="condensed mt-4 flex items-center gap-4 font-display text-[clamp(2.75rem,7vw,6.5rem)] leading-[0.9] tracking-[-0.045em]">
             {next.title}
             <ArrowRight className="size-[0.6em] shrink-0 transition-transform duration-500 group-hover:translate-x-2" />
           </p>

@@ -5,6 +5,7 @@ export const siteUrl =
     : "http://localhost:3000");
 
 export const nav = [
+  { label: "Philosophy", href: "/#philosophy" },
   { label: "Work", href: "/#work" },
   { label: "Plans", href: "/#plans" },
   { label: "About", href: "/#about" },

@@ -1,13 +1,17 @@
 import { ArrowUp, ArrowUpRight } from "@/components/icons";
+import { SectionLabel } from "@/components/section-label";
 import { profile } from "@/content/profile";
 
 export function SiteFooter() {
   return (
     <footer id="contact" className="bg-night text-paper">
       <div className="mx-auto max-w-[90rem] px-5 pt-24 pb-10 md:px-10 md:pt-36">
-        <p className="eyebrow text-night-soft">Contact</p>
-        <div className="mt-6 grid gap-14 lg:grid-cols-12">
-          <h2 className="font-serif text-[clamp(3rem,9vw,8.5rem)] leading-[0.92] tracking-[-0.02em] lg:col-span-7">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/15 pb-4 text-night-soft">
+          <SectionLabel index={6}>Contact</SectionLabel>
+          <p className="eyebrow">{profile.coordinates}</p>
+        </div>
+        <div className="mt-12 grid gap-14 lg:grid-cols-12">
+          <h2 className="condensed font-display text-[clamp(3.25rem,9vw,8.5rem)] leading-[0.88] tracking-[-0.045em] lg:col-span-7">
             Let&rsquo;s shape <br className="hidden sm:block" />
             <em className="text-terracotta">a place</em> together.
           </h2>
@@ -51,7 +55,7 @@ export function SiteFooter() {
 
         <div className="mt-20 flex flex-col gap-4 text-sm text-night-soft sm:flex-row sm:items-center sm:justify-between">
           <p>© {profile.name}</p>
-          <p>Architecture · Landscape · Visualisation</p>
+          <p>{profile.tagline}</p>
           <a href="#main" className="inline-flex items-center gap-2 hover:text-paper">
             Back to top <ArrowUp className="size-4" />
           </a>

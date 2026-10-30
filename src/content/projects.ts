@@ -18,6 +18,24 @@ import theeramZones4 from "@/assets/projects/theeram/zones-4.jpg";
 import theeramHall from "@/assets/projects/theeram/event-hall-plan.jpg";
 import theeramReception from "@/assets/projects/theeram/reception-plan.jpg";
 
+import auditorium01 from "@/assets/projects/auditorium/view-01.jpg";
+import auditorium02 from "@/assets/projects/auditorium/view-02.jpg";
+import auditorium03 from "@/assets/projects/auditorium/view-03.jpg";
+import auditorium04 from "@/assets/projects/auditorium/view-04.jpg";
+import auditorium05 from "@/assets/projects/auditorium/view-05.jpg";
+import auditorium06 from "@/assets/projects/auditorium/view-06.jpg";
+import auditorium07 from "@/assets/projects/auditorium/view-07.jpg";
+import auditorium08 from "@/assets/projects/auditorium/view-08.jpg";
+import auditorium09 from "@/assets/projects/auditorium/view-09.jpg";
+import auditorium10 from "@/assets/projects/auditorium/view-10.jpg";
+import auditorium11 from "@/assets/projects/auditorium/view-11.jpg";
+import auditorium12 from "@/assets/projects/auditorium/view-12.jpg";
+import auditoriumCover from "@/assets/projects/auditorium/cover.jpg";
+import auditoriumSitePlan from "@/assets/projects/auditorium/site-plan.jpg";
+import auditoriumGroundFloor from "@/assets/projects/auditorium/ground-floor.jpg";
+import auditoriumElevation from "@/assets/projects/auditorium/front-elevation.jpg";
+import auditoriumSiteData from "@/assets/projects/auditorium/site-data.jpg";
+
 import afsal01 from "@/assets/projects/afsal/view-01.jpg";
 import afsal02 from "@/assets/projects/afsal/view-02.jpg";
 import afsal03 from "@/assets/projects/afsal/view-03.jpg";
@@ -32,14 +50,6 @@ import afsal11 from "@/assets/projects/afsal/view-11.jpg";
 import afsal12 from "@/assets/projects/afsal/view-12.jpg";
 import afsal13 from "@/assets/projects/afsal/view-13.jpg";
 import afsalJourney from "@/assets/projects/afsal/spatial-journey.jpg";
-
-import auditorium06 from "@/assets/projects/auditorium/view-06.jpg";
-import auditorium07 from "@/assets/projects/auditorium/view-07.jpg";
-import auditorium08 from "@/assets/projects/auditorium/view-08.jpg";
-import auditorium09 from "@/assets/projects/auditorium/view-09.jpg";
-import auditorium10 from "@/assets/projects/auditorium/view-10.jpg";
-import auditorium11 from "@/assets/projects/auditorium/view-11.jpg";
-import auditorium12 from "@/assets/projects/auditorium/view-12.jpg";
 
 import aman02 from "@/assets/projects/aman/view-02.jpg";
 import aman03 from "@/assets/projects/aman/view-03.jpg";
@@ -109,6 +119,22 @@ const theeram = {
     src: theeramStorm,
     alt: "The venue seen across the river under a stormy sky, verandah pavilions and gazebos at the water's edge",
   },
+  court: { src: theeramCourt, alt: "Arched entrance court with a stone path, potted plants and balconies above" },
+};
+
+const auditorium = {
+  front: {
+    src: auditorium03,
+    alt: "Front of the auditorium at sunset — an A-frame of timber and glass above a lit stone forecourt",
+  },
+  roof: {
+    src: auditorium04,
+    alt: "The roof plane slicing down into the ground beside a lit garden path under a flowering tree",
+  },
+  amphitheatre: {
+    src: auditorium10,
+    alt: "Sunken open-air amphitheatre at dusk, its curved steps lit from below around a circular stage",
+  },
 };
 
 const afsal = {
@@ -116,21 +142,14 @@ const afsal = {
     src: afsal03,
     alt: "Aerial view of the stone forecourt with planted islands in front of the white colonial-style house",
   },
-};
-
-const auditorium = {
-  amphitheatre: {
-    src: auditorium10,
-    alt: "Sunken open-air amphitheatre at dusk, its curved steps lit from below around a circular stage",
-  },
-  building: {
-    src: auditorium07,
-    alt: "Gabled auditorium above a lit rubble-stone retaining wall and driveway at sunset",
+  garden: { src: afsal10, alt: "Garden court of slate pavers set in grass among lush tropical planting" },
+  courtyard: {
+    src: afsal13,
+    alt: "Arched courtyard with a flowering tree in a terracotta pot and built-in seating",
   },
 };
 
 const aman = {
-  pool: { src: aman22, alt: "Backyard pool with a timber deck, pergola lounge and flowering borders" },
   sitePlan: {
     src: amanSitePlan,
     alt: "Rendered landscape site plan of the one-acre garden around the house",
@@ -142,6 +161,17 @@ const dhanesh = {
   house: {
     src: dhaneshRender,
     alt: "Two-storey concrete house with full-height glazing and cascading planters over a long pool, in a tropical forest",
+  },
+};
+
+const residence = {
+  front: {
+    src: residence01,
+    alt: "Front of the home: white plaster frame, exposed brick, stone porch and a roof terrace",
+  },
+  dusk: {
+    src: residence03,
+    alt: "Single-storey home at dusk, warm cove lighting around its white frame and stone porch",
   },
 };
 
@@ -163,7 +193,7 @@ export const projects: Project[] = [
       { label: "Site", value: "1.3 acres · 57,300 sq ft" },
       { label: "Capacity", value: "300–400 guests" },
       { label: "Terrain", value: "7 m fall, south to north (≈8°)" },
-      { label: "Scope", value: "Master plan, landscape & visualisation" },
+      { label: "Scope", value: "Master plan, landscape & visualization" },
     ],
     highlights: {
       title: "Programme",
@@ -190,7 +220,7 @@ export const projects: Project[] = [
         alt: "Modern pavilion with a timber screen wall and terracotta roof meeting an arched villa",
       },
       { src: theeramBalcony, alt: "Villa wing with an arched window, wrought-iron balcony and climbing flowers" },
-      { src: theeramCourt, alt: "Arched entrance court with a stone path, potted plants and balconies above" },
+      theeram.court,
       { src: theeramArcade, alt: "Arcaded courtyard around a reflecting pool with potted trees" },
       { src: theeramGate, alt: "Garden gate under a flowering arch, with a wooden door and a tiered fountain" },
     ],
@@ -238,6 +268,90 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "vazhayur-auditorium",
+    title: "Vazhayur Auditorium",
+    category: "Architecture · Landscape",
+    location: "Vazhayur, Malappuram, Kerala",
+    summary:
+      "A wedding and conference hall set into a former laterite quarry — two terraces, one dramatic roof, and gardens lit for dusk.",
+    overview: [
+      "A contemporary, multi-functional auditorium at Vazhayur, designed mainly for weddings, with room for conferences and cultural events. The brief balanced grand aesthetics with practical needs: robust acoustics, clear sightlines, seamless circulation and an efficient flow for event management and catering.",
+      "The site is a former laterite quarry — two man-made plateaus carved into a hillside, 6–8 m apart. Rather than hide the quarry face, the design uses it as a dramatic backdrop: the main event hall, grand entrance foyer and executive lounge sit on the upper level, with dining, the kitchen and utilities below.",
+      "A clear spatial hierarchy leads guests from arrival to the main hall, the stage and the dining area. Outside, terraced lawns, gazebos and an open-air amphitheatre are held by rubble-stone walls and traced in low, warm light for evening events.",
+    ],
+    facts: [
+      { label: "Location", value: "Vazhayur, Malappuram, Kerala" },
+      { label: "Site", value: "≈95 cents · 41,400 sq ft" },
+      { label: "Terrain", value: "Former laterite quarry, 6–8 m level change" },
+      { label: "Use", value: "Weddings, conferences, cultural events" },
+      { label: "Scope", value: "Architecture, landscape & visualization" },
+    ],
+    highlights: {
+      title: "Key features",
+      items: [
+        "Main event hall, entrance foyer and lounge on the upper plateau",
+        "Dining, kitchen and utilities on the lower level",
+        "Acoustic design, and daylight with glare and heat kept in check",
+        "Open-air amphitheatre, gazebos and shaded seating",
+        "Back-of-house with prayer rooms, green rooms and a service stair",
+      ],
+    },
+    cover: auditorium.front,
+    gallery: [
+      auditorium.front,
+      {
+        src: auditorium01,
+        alt: "The auditorium at dusk, its long sloping roof and lit stone walls rising beside the entrance drive",
+      },
+      {
+        src: auditorium02,
+        alt: "Corner view of the hall: a steep timber-lined roof plane sweeping down to a lit forecourt",
+      },
+      auditorium.roof,
+      {
+        src: auditorium05,
+        alt: "Side elevation at sunset — a long dark roof over a glazed upper level and a lit boundary wall",
+      },
+      auditorium.amphitheatre,
+      {
+        src: auditorium07,
+        alt: "Gabled hall above a lit rubble-stone retaining wall and driveway at sunset",
+      },
+      { src: auditorium11, alt: "Circular stage on a lawn, backed by a planted wall with hanging lanterns" },
+      { src: auditorium09, alt: "Vine-covered arch over a garden path lined with ground lights" },
+      { src: auditorium08, alt: "Curving footpath beside a stone wall and lawn, traced in low lighting" },
+      { src: auditorium12, alt: "Terraced lawns and stone retaining walls with lit steps under a large tree" },
+      { src: auditorium06, alt: "Front of the hall with rooftop planters and a lit landscaped edge" },
+    ],
+    drawings: [
+      {
+        src: auditoriumCover,
+        alt: "Presentation cover — Conference Hall Design, Vazhayur — with the A-frame hall in a misty garden",
+        caption: "Presentation cover",
+      },
+      {
+        src: auditoriumSitePlan,
+        alt: "Rendered site plan with the hall, a paved arrival court, gardens and planting across the terraced site",
+        caption: "Site plan",
+      },
+      {
+        src: auditoriumGroundFloor,
+        alt: "Rendered ground floor plan with rows of seating facing the stage and service rooms around the hall",
+        caption: "Ground floor plan",
+      },
+      {
+        src: auditoriumElevation,
+        alt: "Front elevation of the A-frame hall with a timber soffit, full-height glazing and a terrace",
+        caption: "Front elevation",
+      },
+      {
+        src: auditoriumSiteData,
+        alt: "Site data board with the project overview, client goal, quarry topography, climate and survey plan",
+        caption: "Site data & analysis",
+      },
+    ],
+  },
+  {
     slug: "afsal-residence",
     title: "Afsal Residence",
     category: "Landscape · Residential",
@@ -251,7 +365,7 @@ export const projects: Project[] = [
       { label: "Type", value: "Residential landscape" },
       { label: "Frontage hardscape", value: "8,000 sq ft" },
       { label: "Entrance ramp", value: "6.2 m wide" },
-      { label: "Scope", value: "Landscape design & visualisation" },
+      { label: "Scope", value: "Landscape design & visualization" },
     ],
     journey: {
       title: "Spatial experience journey",
@@ -305,10 +419,10 @@ export const projects: Project[] = [
       { src: afsal07, alt: "Side garden path of stone pavers set in grass along the house" },
       { src: afsal08, alt: "Chevron-paved walkway with a frangipani tree and stone seating beside the house" },
       { src: afsal09, alt: "Rain-washed stone patio with a curving stepping-stone path into the garden" },
-      { src: afsal10, alt: "Garden court of slate pavers set in grass among lush tropical planting" },
+      afsal.garden,
       { src: afsal11, alt: "Light well inside the house with a potted tree, ferns and a timber deck" },
       { src: afsal12, alt: "Top view of an internal courtyard with a timber deck, planters and urns" },
-      { src: afsal13, alt: "Arched courtyard with a flowering tree in a terracotta pot and built-in seating" },
+      afsal.courtyard,
     ],
     drawings: [
       {
@@ -317,36 +431,6 @@ export const projects: Project[] = [
         caption: "Landscape plan · spatial journey",
       },
     ],
-  },
-  {
-    slug: "auditorium-landscape",
-    title: "Auditorium Landscape",
-    category: "Landscape · Lighting",
-    summary:
-      "Terraced lawns, stone walls and an open-air amphitheatre, designed for the hour after sunset.",
-    overview: [
-      "A landscape for an auditorium, imagined for the hour after sunset. Rubble-stone retaining walls terrace the slope into lawns, and the curving driveway and footpaths are traced in low, warm light.",
-      "Garden rooms open off the paths: a vine-covered arch, a sunken amphitheatre whose curved steps glow from below, and a circular stage set against a planted wall hung with lanterns.",
-    ],
-    facts: [
-      { label: "Type", value: "Institutional landscape" },
-      { label: "Features", value: "Amphitheatre, terraced lawns, lit paths" },
-      { label: "Scope", value: "Landscape, lighting & visualisation" },
-    ],
-    cover: auditorium.amphitheatre,
-    gallery: [
-      auditorium.amphitheatre,
-      auditorium.building,
-      {
-        src: auditorium11,
-        alt: "Circular stage on a lawn, backed by a planted wall with hanging lanterns",
-      },
-      { src: auditorium09, alt: "Vine-covered arch over a garden path lined with ground lights" },
-      { src: auditorium08, alt: "Curving footpath beside a stone wall and lawn, traced in low lighting" },
-      { src: auditorium12, alt: "Terraced lawns and stone retaining walls with lit steps under a large tree" },
-      { src: auditorium06, alt: "Front of the auditorium with rooftop planters and a lit landscaped edge" },
-    ],
-    drawings: [],
   },
   {
     slug: "aman-retreat",
@@ -369,7 +453,7 @@ export const projects: Project[] = [
     cover: aman.sitePlan,
     coverPosition: "50% 45%",
     gallery: [
-      aman.pool,
+      { src: aman22, alt: "Backyard pool with a timber deck, pergola lounge and flowering borders" },
       {
         src: aman16,
         alt: "Water pavilion: a raised platform with seating and planters ringed by a shallow pool",
@@ -420,7 +504,7 @@ export const projects: Project[] = [
     facts: [
       { label: "Type", value: "Farm house" },
       { label: "Setting", value: "Riverside" },
-      { label: "Scope", value: "Concept design & visualisation" },
+      { label: "Scope", value: "Concept design & visualization" },
     ],
     cover: dhanesh.house,
     gallery: [dhanesh.house],
@@ -445,21 +529,12 @@ export const projects: Project[] = [
     facts: [
       { label: "Type", value: "Single-storey home" },
       { label: "Materials", value: "Plaster, exposed brick, rubble stone" },
-      { label: "Scope", value: "Architecture & visualisation" },
+      { label: "Scope", value: "Architecture & visualization" },
     ],
-    cover: {
-      src: residence03,
-      alt: "Single-storey home at dusk, warm cove lighting around its white frame and stone porch",
-    },
+    cover: residence.dusk,
     gallery: [
-      {
-        src: residence01,
-        alt: "Front of the home: white plaster frame, exposed brick, stone porch and a roof terrace",
-      },
-      {
-        src: residence03,
-        alt: "Single-storey home at dusk, warm cove lighting around its white frame and stone porch",
-      },
+      residence.front,
+      residence.dusk,
       { src: residence02, alt: "Corner view of the stone-clad porch, roof terrace railing and grass-set pavers" },
       { src: residence04, alt: "Close view of the stone-clad porch with a chair beneath a slim canopy" },
     ],
@@ -530,19 +605,55 @@ export const plans: Shot[] = [
   },
 ];
 
-export type HeroSlide = Shot & { title: string; place: string; href: string };
+/** Shown inside the arched frame on the home page, so portrait-friendly crops matter. */
+export type HeroSlide = Shot & { title: string; place: string; href: string; position?: string };
 
 export const heroSlides: HeroSlide[] = [
-  { ...theeram.river, title: "Theeram Event Venue", place: "Chembra, Tirur", href: "/projects/theeram-event-venue" },
-  { ...afsal.forecourt, title: "Afsal Residence", place: "Landscape", href: "/projects/afsal-residence" },
   {
-    ...auditorium.building,
-    title: "Auditorium Landscape",
-    place: "Landscape & lighting",
-    href: "/projects/auditorium-landscape",
+    ...auditorium.front,
+    title: "Vazhayur Auditorium",
+    place: "Malappuram",
+    href: "/projects/vazhayur-auditorium",
   },
-  { ...dhanesh.house, title: "Dhanesh Farm House", place: "Riverside concept", href: "/projects/dhanesh-farm-house" },
+  { ...theeram.court, title: "Theeram Event Venue", place: "Tirur", href: "/projects/theeram-event-venue" },
+  {
+    ...afsal.forecourt,
+    title: "Afsal Residence",
+    place: "Landscape",
+    href: "/projects/afsal-residence",
+    position: "45% 50%",
+  },
+  {
+    ...dhanesh.house,
+    title: "Dhanesh Farm House",
+    place: "Riverside concept",
+    href: "/projects/dhanesh-farm-house",
+    position: "40% 50%",
+  },
 ];
+
+/** Images that sit inline with the words of the philosophy statement. */
+export const statementImages = {
+  space: auditorium.front,
+  nature: afsal.garden,
+  perception: theeram.river,
+};
+
+/** “How form emerges…” — each exploration illustrated by a project. */
+export const explorations = [
+  { title: "How form emerges", project: "Vazhayur Auditorium", href: "/projects/vazhayur-auditorium", shot: auditorium.roof },
+  { title: "How materials communicate", project: "Residence", href: "/projects/residence", shot: residence.front },
+  {
+    title: "How landscapes influence architecture",
+    project: "Theeram Event Venue",
+    href: "/projects/theeram-event-venue",
+    shot: theeram.river,
+  },
+  { title: "How spaces evoke emotion", project: "Afsal Residence", href: "/projects/afsal-residence", shot: afsal.courtyard },
+];
+
+/** Full-bleed image behind the closing statement. */
+export const statementBackdrop = auditorium.amphitheatre;
 
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);

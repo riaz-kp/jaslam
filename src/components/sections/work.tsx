@@ -1,4 +1,5 @@
 import { ProjectCard } from "@/components/project-card";
+import { SectionLabel } from "@/components/section-label";
 import { projects } from "@/content/projects";
 import { pad } from "@/lib/format";
 
@@ -15,15 +16,25 @@ const layout = [
 
 export function Work() {
   return (
-    <section id="work" aria-labelledby="work-title" className="mx-auto max-w-[90rem] px-5 pb-24 md:px-10 md:pb-36">
-      <div className="flex items-end justify-between gap-6 border-b border-ink/15 pb-6">
-        <h2 id="work-title" className="font-serif text-[clamp(3rem,8vw,7rem)] leading-[0.9] tracking-[-0.02em]">
-          Selected <em>work</em>
-        </h2>
-        <p className="eyebrow pb-2 text-ink-soft">{pad(projects.length)} projects</p>
+    <section id="work" aria-labelledby="work-title" className="mx-auto max-w-[90rem] px-5 py-24 md:px-10 md:py-36">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink/15 pb-4">
+        <SectionLabel index={3}>Work</SectionLabel>
+        <p className="eyebrow text-ink-soft">{pad(projects.length)} projects</p>
       </div>
 
-      <ul className="mt-12 grid gap-x-10 gap-y-16 md:mt-16 lg:grid-cols-12 lg:gap-y-24">
+      <div className="mt-12 grid gap-6 lg:grid-cols-12 lg:items-end">
+        <h2
+          id="work-title"
+          className="condensed font-display text-[clamp(3.25rem,9vw,8.5rem)] leading-[0.86] tracking-[-0.045em] lg:col-span-8"
+        >
+          <em>Selected</em> work
+        </h2>
+        <p className="max-w-sm text-lg leading-relaxed text-ink-soft lg:col-span-4">
+          Halls, venues, homes and gardens across Kerala — each one an idea made tangible.
+        </p>
+      </div>
+
+      <ul className="mt-14 grid gap-x-10 gap-y-16 md:mt-20 lg:grid-cols-12 lg:gap-y-24">
         {projects.map((project, i) => {
           const slot = layout[i % layout.length];
           return (

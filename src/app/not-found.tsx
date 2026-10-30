@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <section className="mx-auto flex min-h-[80svh] max-w-[90rem] flex-col justify-center px-5 pt-28 pb-20 md:px-10">
       <p className="eyebrow text-ink-soft">404</p>
-      <h1 className="mt-6 font-serif text-[clamp(3.5rem,10vw,9rem)] leading-[0.9] tracking-[-0.02em]">
+      <h1 className="condensed mt-6 font-display text-[clamp(3.5rem,10vw,9rem)] leading-[0.88] tracking-[-0.045em]">
         Off the <em>site plan.</em>
       </h1>
       <p className="mt-6 max-w-md text-lg text-ink-soft">

@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Meter } from "@/components/meter";
+import { SectionLabel } from "@/components/section-label";
 import { profile, type Entry } from "@/content/profile";
 
 function Timeline({ title, entries }: { title: string; entries: Entry[] }) {
@@ -23,39 +24,40 @@ function Timeline({ title, entries }: { title: string; entries: Entry[] }) {
 }
 
 export function About() {
-  const [lead, ...rest] = profile.bio;
-
   return (
     <section id="about" aria-labelledby="about-title" className="mx-auto max-w-[90rem] px-5 py-24 md:px-10 md:py-36">
+      <div className="mb-12 border-b border-ink/15 pb-4 md:mb-16">
+        <SectionLabel index={5}>About</SectionLabel>
+      </div>
+
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-28">
-            <div className="relative aspect-[4/5] max-w-sm overflow-hidden bg-paper-deep">
+            <div className="relative aspect-[3/4] max-w-sm overflow-hidden rounded-t-full bg-paper-deep">
               <Image
                 src={profile.portrait}
-                alt={`Portrait of ${profile.name}`}
+                alt={`Portrait of ${profile.name}, smiling, leaning on a railing with green hills behind him`}
                 fill
                 sizes="(min-width: 1024px) 24rem, 90vw"
                 placeholder="blur"
-                className="object-cover grayscale"
+                className="object-cover object-[50%_58%]"
               />
             </div>
-            <p className="eyebrow mt-4 text-ink-soft">
-              {profile.name} — {profile.location}
+            <p className="eyebrow mt-4 flex max-w-sm justify-between border-t border-ink/15 pt-3 text-ink-soft">
+              <span>{profile.name}</span>
+              <span>{profile.coordinates}</span>
             </p>
           </div>
         </div>
 
         <div className="lg:col-span-8">
-          <p className="eyebrow text-ink-soft">About</p>
-          <h2 id="about-title" className="mt-6 font-serif text-[clamp(2.25rem,4.4vw,3.9rem)] leading-[1.06] tracking-[-0.01em] text-balance">
-            {lead}
+          <p className="eyebrow text-terracotta-deep">{profile.role}</p>
+          <h2
+            id="about-title"
+            className="mt-6 font-display text-[clamp(2.25rem,4.4vw,3.9rem)] font-normal leading-[1.04] tracking-[-0.03em] text-balance"
+          >
+            {profile.intro}
           </h2>
-          {rest.map((paragraph) => (
-            <p key={paragraph} className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">
-              {paragraph}
-            </p>
-          ))}
 
           <dl className="mt-14 grid gap-6 border-y border-ink/15 py-6 sm:grid-cols-3">
             <div>
