@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f3efe7;
+  --color-paper-deep: #e9e2d5;
+  --color-ink: #1b1a17;
+  --color-ink-soft: #5e5950;
+  --color-terracotta: #b5542c;
+  --color-terracotta-deep: #9a4322;
+  --color-night: #141612;
+  --color-night-soft: #a9a497;
+  --color-moss: #2b3326;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  body {
+    min-height: 100svh;
+    font-family: var(--font-sans);
+  }
+
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+
+  ::selection {
+    background-color: var(--color-terracotta);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-terracotta);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    line-height: 1.5;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  /* Transparent over a hero image, solid paper once scrolled past it (or on pages with no hero). */
+  .site-header {
+    color: #fff;
+  }
+  .site-header[data-solid="true"],
+  body:not(:has([data-hero])) .site-header {
+    color: var(--color-ink);
+    background-color: color-mix(in oklab, var(--color-paper) 96%, transparent);
+    box-shadow: 0 1px 0 rgb(27 26 23 / 0.1);
+  }
+
+  .skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    padding: 0.6rem 1rem;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    transform: translateY(-200%);
+  }
+  .skip-link:focus {
+    transform: none;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes settle {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-settle {
+    animation: settle 9s var(--ease-soft) both;
+  }
+
+  .hero-progress {
+    animation: fill var(--slide-duration) linear both;
+  }
+
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 14rem;
+    }
+  }
+}
